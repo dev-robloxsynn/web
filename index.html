@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PS99 Script/Gui Futuriste</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* RESET & BASE */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; font-family: 'Orbitron', sans-serif; background: #0a0a0a; color: #e0e0e0; }
+    a { color: #00e5ff; text-decoration: none; }
+    button { 
+      font-family: 'Orbitron', sans-serif; 
+      background: #00e5ff; 
+      border: none; 
+      padding: 10px 20px; 
+      cursor: pointer; 
+      border-radius: 4px; 
+      text-transform: uppercase; 
+      letter-spacing: 1px;
+      transition: transform .2s, box-shadow .2s;
+    }
+    button:hover { 
+      transform: translateY(-2px); 
+      box-shadow: 0 0 10px rgba(0,229,255,0.6); 
+    }
+
+    /* CONTAINER */
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: rgba(20,20,20,0.85);
+      border: 1px solid #00e5ff;
+      box-shadow: 0 0 20px rgba(0,229,255,0.6);
+      border-radius: 8px;
+      backdrop-filter: blur(5px);
+    }
+
+    /* HEADINGS & ANIMATIONS */
+    h1, h2, h3 {
+      text-align: center;
+      letter-spacing: 2px;
+    }
+    h1 {
+      color: #00e5ff;
+      margin-bottom: 20px;
+      animation: glow 2.5s infinite;
+      text-shadow: 0 0 10px rgba(0,229,255,0.8);
+    }
+    h2, h3 {
+      animation: bounce 3s infinite;
+    }
+    @keyframes glow {
+      0%, 100% { text-shadow: 0 0 8px rgba(0,229,255,0.8), 0 0 20px rgba(0,229,255,0.6); }
+      50% { text-shadow: 0 0 16px rgba(0,229,255,1), 0 0 30px rgba(0,229,255,0.8); }
+    }
+    @keyframes bounce {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    /* FADE-IN UP */
+    .fadeInUp {
+      opacity: 0;
+      animation: fadeInUp 1s forwards;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* SCROLLING DESCRIPTION */
+    .scrolling-text {
+      overflow: hidden;
+      white-space: nowrap;
+      border-top: 1px solid #39ff14;
+      border-bottom: 1px solid #39ff14;
+      margin: 10px 0 20px;
+    }
+    .scrolling-text span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scroll 15s linear infinite;
+    }
+    @keyframes scroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+
+    /* DESCRIPTION & FEATURES */
+    .description p {
+      line-height: 1.5;
+      margin-bottom: 15px;
+      padding: 0 10px;
+    }
+    .features {
+      list-style: none;
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+    .features li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 8px;
+    }
+    .features li:before {
+      content: '▪';
+      position: absolute;
+      left: 0;
+      color: #39ff14;
+    }
+
+    /* CODE BLOCK */
+    .code pre {
+      background: #010101;
+      padding: 15px;
+      border: 1px solid #39ff14;
+      border-radius: 4px;
+      overflow-x: auto;
+      box-shadow: 0 0 15px rgba(57,255,20,0.6);
+      font-family: 'Courier New', monospace;
+      color: #39ff14;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>PS99 Script/Gui</h1>
+
+    <div class="description fadeInUp">
+      <h2>Description</h2>
+      <div class="scrolling-text">
+        <span>This is a working free Pet Simulator 99! (PS99) Script/Gui. It is undetectable. It works on all decent executors like AWP.gg, Synapse Z, Wave, Seliware, Nihon, Delta, Codex Arceus X, etc. Join to ZapHub Discord Server (https://discord.gg/zaphub) to be aware of new updates of this Script/Gui. Remember ZapHub has a Premium Version with more Op features and Keyless.</span>
+      </div>
+      <h3>Features:</h3>
+      <ul class="features">
+        <li>Exclu : HUGE HUNTER SCRIPT</li>
+        <li>Auto Complete Event World</li>
+        <li>Auto Complete Squid Games</li>
+        <li>Auto Complete World</li>
+        <li>Auto Complete Rank Quest</li>
+        <li>Webhook Tab</li>
+        <li>Optimization Tab</li>
+        <li>Auto Farm Tab</li>
+        <li>Egg Tab</li>
+        <li>Quest Tab</li>
+        <li>Mailbox Tab</li>
+        <li>Main Tab</li>
+        <li>Automatic Tab</li>
+        <li>Minigames Tab</li>
+        <li>Teleport Tab</li>
+        <li>Player Tab</li>
+        <li>There are more than 120 Features</li>
+      </ul>
+    </div>
+
+    <div class="code fadeInUp" style="animation-delay: 0.5s;">
+      <h2>Copy &amp; Paste</h2>
+      <pre><code id="script-code">loadstring(game:HttpGet("https://raw.githubusercontent.com/dev-robloxsynn/Ps99Script2025/refs/heads/main/script", true))()</code></pre>
+      <button id="copy-btn">Copy Script</button>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('copy-btn').addEventListener('click', function() {
+      const code = document.getElementById('script-code').innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        this.textContent = 'Copied ✅';
+        setTimeout(() => { this.textContent = 'Copy Script'; }, 2000);
+      }).catch(err => {
+        alert('Erreur lors de la copie : ' + err);
+      });
+    });
+  </script>
+</body>
+</html>
